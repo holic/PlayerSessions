@@ -1,0 +1,8 @@
+name: PlayerSessions
+description: Player session tracking for MCServers.org
+author: Kevin Ingersoll
+website: http://mcservers.org/
+
+main: org.mcservers.playersessions.Plugin
+version: ${pom.version}
+load: STARTUP
