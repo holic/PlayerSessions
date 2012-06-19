@@ -59,7 +59,7 @@ public class Session implements JSONAware {
         
         json.put("hostname", hostname);
         json.put("player", player.getName());
-        json.put("id", id);
+        json.put("uid", id);
         json.put("start", start / 1000L);
         json.put("end", getEnd() / 1000L);
         json.put("has_played_before", player.hasPlayedBefore());
