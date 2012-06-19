@@ -76,18 +76,18 @@ public class Sessions implements Listener, Runnable {
     public Session startSession(String hostname, OfflinePlayer player) {
         Session session = new Session(hostname, player);
         setSession(player, session);
-        return session;
+        return touch(session);
     }
     public Session endSession(OfflinePlayer player) {
         Session session = setSession(player, null);
         session.end();
-        return session;
+        return touch(session);
     }
     
     
-    public void touch(Session session) {
-        if(session == null) return;
-        updated.add(session);
+    public Session touch(Session session) {
+        if(session != null) updated.add(session);
+        return session;
     }
     public void touchAll() {
         updated.addAll(sessions.values());

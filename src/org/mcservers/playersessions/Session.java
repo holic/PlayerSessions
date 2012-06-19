@@ -36,21 +36,22 @@ public class Session implements JSONAware {
     public String getId() {
         return id;
     }
-    public long elapsed() {
-        return getEnd() - start;
-    }
     
     public boolean isOpen() {
         return end == 0;
-    }
-    public long getStart() {
-        return start;
     }
     public long getEnd() {
         return isOpen() ? System.currentTimeMillis() : end;
     }
     public long end() {
         return end = getEnd();
+    }
+    
+    public long getStart() {
+        return start;
+    }
+    public long elapsed() {
+        return getEnd() - start;
     }
     
     
