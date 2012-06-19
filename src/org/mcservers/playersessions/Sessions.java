@@ -119,6 +119,7 @@ public class Sessions implements Listener, Runnable {
                 remaining = updated.size();
                 run();
                 if(updated.size() == remaining && ++failures > 10) {
+                    logger.warning(String.format("Failed to send remaining sessions onDisable:\n\n%s\n", JSONArray.toJSONString(new ArrayList(updated))));
                     break;
                 }
             }
